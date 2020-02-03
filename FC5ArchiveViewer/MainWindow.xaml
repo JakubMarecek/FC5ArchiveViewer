@@ -1,0 +1,18 @@
+﻿<Window x:Class="FC5ArchiveViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FC5ArchiveViewer"
+        mc:Ignorable="d"
+        Title="Title" Height="800" Width="600" Loaded="Window_Loaded" Background="#333333">
+    <Grid>
+        <TreeView x:Name="foldersItem" SelectedItemChanged="foldersItem_SelectedItemChanged" Width="Auto" Background="#333333" BorderBrush="#333333" Foreground="#FFFFFFFF">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type local:MyTreeViewItem}" ItemsSource="{Binding SubItems}">
+                    <TextBlock Text="{Binding Name}" Foreground="White" FontSize="14" />
+                </HierarchicalDataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+    </Grid>
+</Window>
